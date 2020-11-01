@@ -12,9 +12,9 @@ public class Application {
 			return 0;
 		}
 		int digit = String.valueOf(num).length();
-		int base = (int)Math.pow(10, digit-1);
-		int numCount = num - base +1;
-		return numCount * digit + countDigitsFromOne(base-1);
+		int minimunNumber = (int)Math.pow(10, digit-1);
+		int numCount = num - minimunNumber +1;
+		return numCount * digit + countDigitsFromOne(minimunNumber-1);
 	}
 	
 	
