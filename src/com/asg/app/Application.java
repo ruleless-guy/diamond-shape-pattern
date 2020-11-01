@@ -7,6 +7,16 @@ public class Application {
 		showDiamondShapePattern(num);
 	}
 	
+	public static int findDigits(int num) {
+		if(num < 1) {
+			return 0;
+		}
+		int digit = String.valueOf(num).length();
+		int base = (int)Math.pow(10, digit-1);
+		int numCount = num - base +1;
+		return numCount * digit + findDigits(base-1);
+	}
+	
 	
 	public static void showDiamondShapePattern(int num) {
 		
@@ -41,17 +51,6 @@ public class Application {
 			System.out.println();
 		}
 		
-	}
-	
-	
-	public static int findDigits(int num) {
-		if(num < 1) {
-			return 0;
-		}
-		int digit = String.valueOf(num).length();
-		int base = (int)Math.pow(10, digit-1);
-		int numCount = num - base +1;
-		return numCount * digit + findDigits(base-1);
 	}
 	
 }
