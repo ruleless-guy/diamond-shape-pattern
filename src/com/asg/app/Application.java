@@ -7,24 +7,24 @@ public class Application {
 		showDiamondShapePattern(num);
 	}
 	
-	public static int findDigits(int num) {
+	public static int countDigitsFromOne(int num) {
 		if(num < 1) {
 			return 0;
 		}
 		int digit = String.valueOf(num).length();
 		int base = (int)Math.pow(10, digit-1);
 		int numCount = num - base +1;
-		return numCount * digit + findDigits(base-1);
+		return numCount * digit + countDigitsFromOne(base-1);
 	}
 	
 	
 	public static void showDiamondShapePattern(int num) {
 		
-		int totalDigit = findDigits(2*num-1);
+		int totalDigit = countDigitsFromOne(2*num-1);
 		
 		for(int i = 1; i<=num; i++) {
 			
-			int spaceLength = ((totalDigit / 2) - findDigits(2*i-1) / 2 );
+			int spaceLength = ((totalDigit / 2) - countDigitsFromOne(2*i-1) / 2 );
 			
 			for(int j = 1; j <= spaceLength; j++) {
 				System.out.print(" ");
@@ -38,7 +38,7 @@ public class Application {
 		
 		for(int i = num-1; i >= 1; i--) {
 			
-			int spaceLength = ((totalDigit / 2) - findDigits(2*i-1) / 2 );
+			int spaceLength = ((totalDigit / 2) - countDigitsFromOne(2*i-1) / 2 );
 			
 			for (int k = 1; k <= spaceLength; k++) {
 				System.out.print(" ");
