@@ -4,10 +4,11 @@ public class Application {
 	
 	public static void main(String[] args) {
 		int num = 26;
-		showDiamondShapePattern(num);
+		Application app = new Application();
+		app.showDiamondShapePattern(num);
 	}
 	
-	public static int countDigitsFromOne(int num) {
+	private int countDigitsFromOne(int num) {
 		if(num < 1) {
 			return 0;
 		}
@@ -18,7 +19,7 @@ public class Application {
 	}
 	
 	
-	public static void showDiamondShapePattern(int num) {
+	public void showDiamondShapePattern(int num) {
 		
 		int totalDigit = countDigitsFromOne(2*num-1);
 		
