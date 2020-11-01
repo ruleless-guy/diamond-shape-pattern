@@ -3,7 +3,7 @@ package com.asg.app;
 public class Application {
 	
 	public static void main(String[] args) {
-		int num = 16;
+		int num = 26;
 		showDiamondShapePattern(num);
 	}
 	
@@ -45,8 +45,8 @@ public class Application {
 	
 	
 	public static int findDigits(int num) {
-		if(num < 10) {
-			return num;
+		if(num < 1) {
+			return 0;
 		}
 		int digit = String.valueOf(num).length();
 		int base = (int)Math.pow(10, digit-1);
